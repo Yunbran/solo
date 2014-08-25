@@ -1,0 +1,142 @@
+body
+{
+
+}
+
+#fightBar
+{
+background: lightgrey;
+width: 60%;
+margin-left: 20%;
+}
+
+
+#firstImg {
+display: inline-block;
+overflow: hidden;
+margin: 5%;
+margin-left: 22%;
+margin-bottom: -1%;
+/* padding-left: 10; */
+position: relative;
+}
+#secondImg
+{
+display: inline-block;
+overflow: hidden;
+margin: 5%;
+/* padding-left: 10; */
+margin-bottom: -1%;
+position: relative;
+}
+
+#vs
+{
+height: auto;
+width: 5%;
+display: inline-block;
+position: relative;
+margin-top: 12%;
+}
+
+.resize{height:400px;width:auto;}
+
+.resize{height: auto;
+width: 20.5%;}
+
+#buttonarea
+{
+	height: 400;
+  width: 100%;
+}
+
+
+#welcome {
+background-color: #C4BCBC;
+border-bottom: 1px solid #C5C5C5;
+height: 30px;
+text-align: center;
+font-size: 1.1em;
+padding-top: 10px;
+width: 100%;
+/* font-weight: 600; */
+/* color: #595959; */
+color: white;
+/*text-shadow: 1px 1px #333;*/
+border-radius: 15px;
+}
+
+#subjectdiv
+{
+	margin-bottom: 140px;
+
+}
+
+
+#like1 {
+    height: 55px;
+width: 10%;
+border-radius: 5px;
+background-color: #69D2E7;
+text-align: center;
+color: black;
+font-family: Verdana, Arial, Sans-Serif;
+opacity: 0.85;
+margin-left: 27%;
+}
+#like2 {
+  height: 55px;
+width: 10%;
+border-radius: 5px;
+background-color: #69D2E7;
+text-align: center;
+color: black;
+font-family: Verdana, Arial, Sans-Serif;
+opacity: 0.85;
+margin-left: 26%;
+}
+#guess1 {
+    height: 60px;
+    width: 10%;
+    border-radius: 5px;
+    background-color: lightgreen;
+    text-align: center;
+     color: black;
+    font-family: Verdana, Arial, Sans-Serif;
+    opacity: 0.85;
+    margin-left: 27%;
+}
+#guess2 {
+    height: 60px;
+    width: 10%;
+    border-radius: 5px;
+    background-color: lightgreen;
+    text-align: center;
+     color: black;
+    font-family: Verdana, Arial, Sans-Serif;
+    opacity: 0.85;
+    margin-left: 26%;
+}
+
+  .mainbutton
+  {
+   display: inline-block;
+   cursor: default;
+  }
+.name
+{
+	display: inline-block;
+	cursor: default;
+	font-size: 200%;
+	
+}
+#name1
+{
+	width: 20.5%;
+  margin-left: 22%;
+}
+#name2
+{
+	width: 20.5%;
+    margin-left: 15%;
+}

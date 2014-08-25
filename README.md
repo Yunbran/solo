@@ -1,4 +1,8 @@
-# Project Name #
+# GuessPop #
+
+See what is popular on this tug-of-war like website!
+
+GuessPop is a website that allows people to vote on their favorite things or concepts. They do this by 'liking' it. There are two opposing ideas next to each other with a bar in between them. That bar represents the tug of war rope. You can like either one of them which increases that sides bar. The catch is that the like button can be pressed over and over again. This is called a 'pop'! A pop gives you one point every click, but sometimes you can get a superPop which can be worth up to 10,000 points.
 
 <!-- 
 
