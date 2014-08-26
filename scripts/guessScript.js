@@ -14,6 +14,7 @@ angular.module('guessApp', ['ui.bootstrap'])
     {
       $scope.displaySecond = Counter.increment($scope.displaySecond);
     }
+  };
 //RANDOM BAR HERE-------------------------------------------------------
     $scope.max = 200;
 
@@ -38,6 +39,7 @@ angular.module('guessApp', ['ui.bootstrap'])
       };
     $scope.random();
     $scope.randomStacked = function() {
+      console.log('executed');
         $scope.stacked = [];
         var types = ['success', 'info', 'warning', 'danger'];
 
@@ -56,7 +58,6 @@ angular.module('guessApp', ['ui.bootstrap'])
 
 
 
-  };
 
 
 })
