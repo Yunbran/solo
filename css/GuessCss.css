@@ -47,10 +47,13 @@ width: 20.5%;}
 
 #buttonarea
 {
-	height: 400;
+  padding-top: 50px;
   width: 100%;
 }
-
+#popperarea
+{
+  height: 20px;
+}
 
 #welcome {
 background-color: #C4BCBC;
@@ -130,12 +133,15 @@ margin-left: 26%;
 }
 .popper
 {
-display:inline;
+
 margin-left: 31.25%;
+position: relative;
+top:35px;
 }
 
   .mainbutton
   {
+    position: relative;
    display: inline-block;
    cursor: default;
   }

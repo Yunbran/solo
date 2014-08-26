@@ -1,7 +1,7 @@
 
 
 angular.module('guessApp', ['ui.bootstrap', 'ngFx'])
-.controller('guessCtrl',function($scope, Counter){
+.controller('guessCtrl',function($scope, $timeout, Counter){
   console.log('guessCtrl activated!');
   $scope.counter = Counter.count;
   $scope.displayFirst = 10;
@@ -12,6 +12,7 @@ angular.module('guessApp', ['ui.bootstrap', 'ngFx'])
   $scope.achievement = '';
   $scope.popper = false;
   $scope.personalCounter = 0;
+  $scope.togglerPop = false;
 
 /*
 {
@@ -67,12 +68,17 @@ put in profile
     $scope.togglerThird = !$scope.togglerThird;
   }
 
-
-
-
-
     if(string === 'first'){
       $scope.displayFirst = Counter.increment($scope.displayFirst);
+      $scope.togglerPop = true;
+
+      $timeout(function(){
+      $scope.togglerPop = false;
+      $scope.$apply();
+      console.log('triggered');
+    }, 1000);
+
+
     }
     else if(string ==='second')
     {
@@ -86,12 +92,6 @@ put in profile
     percentageFirst = Math.round(($scope.displayFirst/totalPops) *100);
     console.log(percentageFirst);
     percentageSecond = Math.round(($scope.displaySecond/totalPops) *100);
-
-
-    setTimeout(function(){
-
-      console.log('triggered');
-    }, 500);
 
 
     console.log(percentageSecond);
