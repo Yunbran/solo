@@ -3,9 +3,29 @@
 angular.module('guessApp', ['ui.bootstrap'])
 .controller('guessCtrl',function($scope, Counter){
   console.log('guessCtrl activated!');
-  $scope.cousnter = Counter.count;
-  $scope.displayFirst = 14;
+  $scope.counter = Counter.count;
+  $scope.displayFirst = 10;
   $scope.displaySecond = 4;
+
+
+
+  $scope.setBar = function()
+  {
+     var percentageFirst = 0;
+      var percentageSecond = 0;
+
+      var totalPops = $scope.displayFirst + $scope.displaySecond;
+
+      percentageFirst = Math.round(($scope.displayFirst/totalPops) *100);
+      console.log(percentageFirst);
+      percentageSecond = Math.round(($scope.displaySecond/totalPops) *100);
+
+      console.log(percentageSecond);
+  $scope.stack(percentageFirst, percentageSecond);
+  }
+
+
+
   $scope.increment = function(string){
     if(string === 'first'){
       $scope.displayFirst = Counter.increment($scope.displayFirst);
@@ -14,52 +34,46 @@ angular.module('guessApp', ['ui.bootstrap'])
     {
       $scope.displaySecond = Counter.increment($scope.displaySecond);
     }
+    var percentageFirst = 0;
+    var percentageSecond = 0;
+
+    var totalPops = $scope.displayFirst + $scope.displaySecond;
+
+    percentageFirst = Math.round(($scope.displayFirst/totalPops) *100);
+    console.log(percentageFirst);
+    percentageSecond = Math.round(($scope.displaySecond/totalPops) *100);
+
+    console.log(percentageSecond);
+
+$scope.stack(percentageFirst, percentageSecond);
+
   };
-//RANDOM BAR HERE-------------------------------------------------------
+//BAR HERE-------------------------------------------------------
     $scope.max = 200;
 
-    $scope.random = function() {
-        var value = Math.floor((Math.random() * 100) + 1);
-        var type;
+    $scope.stack = function(percentageFirst, percentageSecond) {
 
-        if (value < 25) {
-          type = 'success';
-        } else if (value < 50) {
-          type = 'info';
-        } else if (value < 75) {
-          type = 'warning';
-        } else {
-          type = 'danger';
-        }
-
-        $scope.showWarning = (type === 'danger' || type === 'warning');
-
-        $scope.dynamic = value;
-        $scope.type = type;
-      };
-    $scope.random();
-    $scope.randomStacked = function() {
-      console.log('executed');
         $scope.stacked = [];
-        var types = ['success', 'info', 'warning', 'danger'];
-
-        for (var i = 0, n = Math.floor((Math.random() * 4) + 1); i < n; i++) {
-          var index = Math.floor((Math.random() * 4));
+        var types = ['success', 'info'];
+        var values = [percentageFirst , percentageSecond];
+        for (var i = 0 ; i < types.length; i++) {
           $scope.stacked.push({
-              value: Math.floor((Math.random() * 30) + 1),
-              type: types[index]
+              value: values[i],
+              type: types[i]
             });
         }
       };
-    $scope.randomStacked();
-
-//RANDOM BAR HERE ----------------------------------------------------------------
 
 
+//BAR HERE ----------------------------------------------------------------
+
+$scope.initialize = function()
+{
+   $scope.setBar();
+}
 
 
-
-
+ $scope.initialize();
 })
 .factory('Counter',function(){
 
