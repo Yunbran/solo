@@ -1,88 +1,77 @@
-// load jquery
-//var $ = require('jquery');
-//require('jquery-ui');
-
-$( document ).ready(function() {
-     console.log('has loaded');
-
-//Progressbar function
-      $(function() {
-
-    $( "#progressbar" ).progressbar({
-      value: 37
-    });
- 
 
 
-  });
-var buttonList = [$('#like1'),$('#like2'),$('#guess1'), $('#guess2')];
-
-var like1 = $('#like1');
-var like2 = $('#like2');
-var guess1 = $('#guess1');
-var guess2 = $('#guess2');
-    console.log( "ready!" );
-
-
-
-   like1.mouseenter(function()
+angular.module('guessApp', ['ui.bootstrap'])
+.controller('guessCtrl',function($scope, Counter){
+  console.log('guessCtrl activated!');
+  $scope.cousnter = Counter.count;
+  $scope.displayFirst = 14;
+  $scope.displaySecond = 4;
+  $scope.increment = function(string){
+    if(string === 'first'){
+      $scope.displayFirst = Counter.increment($scope.displayFirst);
+    }
+    else if(string ==='second')
     {
-     like1.fadeTo(0,1);   
-        
-    });
+      $scope.displaySecond = Counter.increment($scope.displaySecond);
+    }
+//RANDOM BAR HERE-------------------------------------------------------
+    $scope.max = 200;
 
+    $scope.random = function() {
+        var value = Math.floor((Math.random() * 100) + 1);
+        var type;
 
-    like1.mouseleave(function()
-    {
-     like1.fadeTo(0,0.80);   
-        
-    });
-   
-   like2.mouseenter(function()
-    {
-     like2.fadeTo(0,1);   
-        
-    });
+        if (value < 25) {
+          type = 'success';
+        } else if (value < 50) {
+          type = 'info';
+        } else if (value < 75) {
+          type = 'warning';
+        } else {
+          type = 'danger';
+        }
 
+        $scope.showWarning = (type === 'danger' || type === 'warning');
 
-    like2.mouseleave(function()
-    {
-     like2.fadeTo(0,0.80);   
-        
-    });
+        $scope.dynamic = value;
+        $scope.type = type;
+      };
+    $scope.random();
+    $scope.randomStacked = function() {
+        $scope.stacked = [];
+        var types = ['success', 'info', 'warning', 'danger'];
 
+        for (var i = 0, n = Math.floor((Math.random() * 4) + 1); i < n; i++) {
+          var index = Math.floor((Math.random() * 4));
+          $scope.stacked.push({
+              value: Math.floor((Math.random() * 30) + 1),
+              type: types[index]
+            });
+        }
+      };
+    $scope.randomStacked();
 
-$('#name1').scalem({
-    ratio: 1,
-    reference: '#name1',
-    styles: 'border-radius border-width'
-  });
-
-
-$('#name2').scalem({
-    ratio: 1,
-    reference: '#name1',
-    styles: 'border-radius border-width'
-  });
-
-
-
-
-
- // $('h1').scalem();
-  // Scale text to 25% of the document's width using data attribute
-  //$('#txt').scalem();
-  // Scale button to 100% the width of the <h1>, while also keeping its
-  // border ratio and width proportionate, by passing object properties
+//RANDOM BAR HERE ----------------------------------------------------------------
 
 
 
 
+  };
 
 
+})
+.factory('Counter',function(){
 
+  var count = 14;
 
+  var increment = function(num){
+    num++;
+    return num;
+  };
 
-
+  return {
+    count: count,
+    increment: increment
+  };
 
 });

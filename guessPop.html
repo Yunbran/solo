@@ -2,17 +2,20 @@
   <head>
     <meta charset="utf-8">
     <title>GuessPop Alpha v2 </title>
-   <link href="css/guessCss.css" rel="stylesheet">
-   <script src = "node_modules/jquery-ui/jquery-ui.js"></script>
+  <link href="css/guessCss.css" rel="stylesheet">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src = "scripts/guessScript.js"></script>
+  <script src = "scripts/progress.js"></script>
   </head>
   <body>
 
 
 
-  
+
     <div id = "welcome"></div>
-   
+
 
 
 
@@ -23,23 +26,50 @@
         <img class = "resize" id = "secondImg"  src="img/chocolate.jpg">
 
         </div>
+
+
         <div id = "namearea">
         <div class = "name" id = "name1">Vanilla</div> <div class="name" id = "name2">Chocolate</div>
         </div>
 
         <div id = "buttonarea">
 
-         <div id ="like1" class = "mainbutton"><br/><strong>Pop!</strong></div>  
-            <div id="fightBar"></div>
-         <div id = "like2" class="mainbutton"><br/><strong>Pop!</strong></div>  
-       
+        <div ng-app="guessApp" ng-controller="guessCtrl">
+        <div id ="like1" class = "mainbutton" ng-click="increment('first')"><br/><strong>Pop!</strong></div>
+        <div id ="like2" class = "mainbutton" ng-click="increment('second')"><br/><strong>Pop!</strong></div>
+
+<!--THIS IS THE BAR AREA-->
+        <div>
+<progressbar></progressbar>
+
+       <!--     <h3>Stacked <button class="btn btn-sm btn-primary" type="button" ng-click="randomStacked()">Randomize</button></h3>
+            <progress><bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}"><span ng-hide="bar.value < 5">{{bar.value}}%</span></bar></progress>-->
+
+        </div>
+<!--THIS IS THE BAR AREA-->
+
+          <h1> {{ displayFirst }} </h1>
+          <h1> {{ displaySecond }} </h1>
+
+
+
+
+
 
         </div>
 
 
-  <div id= "#footer">
+        </div>
 
-  </div>
+
+
+
+
+
+
+
+
+  <div id= "#footer"></div>
 
   </body>
 </html>
