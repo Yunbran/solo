@@ -23,7 +23,7 @@
 
 
   </head>
-  <body>
+  <body ng-app="guessApp" ng-controller="guessCtrl">
 
 
 
@@ -43,12 +43,13 @@
 
 
         <div id = "namearea">
+         <div> <h1 id = "display1"> {{ displayFirst }} </h1> <h1 id = "display2"> {{ displaySecond }} </h1> </div>
         <div class = "name" id = "name1">Vanilla</div> <div class="name" id = "name2">Chocolate</div>
         </div>
 
         <div id = "buttonarea">
 
-        <div ng-app="guessApp" ng-controller="guessCtrl">
+        <div >
         <div id ="like1" class = "mainbutton" ng-click="increment('first')"><br/><strong>Pop!</strong></div>
         <div id ="like2" class = "mainbutton" ng-click="increment('second')"><br/><strong>Pop!</strong></div>
 
@@ -68,8 +69,7 @@
         </div>
 <!--THIS IS THE BAR AREA-->
 
-          <h1> {{ displayFirst }} </h1>
-          <h1> {{ displaySecond }} </h1>
+
 
 
 

@@ -6,6 +6,29 @@ angular.module('guessApp', ['ui.bootstrap'])
   $scope.counter = Counter.count;
   $scope.displayFirst = 10;
   $scope.displaySecond = 4;
+/*
+{
+  firstImage
+  secondImage
+  firstName
+  secondName
+  firstCount
+  secondCount
+}
+*/
+
+/*
+ToDo:
+
+put in achievement
+put in popnumber
+put in other pages
+
+EXTRA:---------
+put in profile
+---------------
+*/
+  $scope.storage = [];
 
 
 

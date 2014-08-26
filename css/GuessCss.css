@@ -72,6 +72,16 @@ border-radius: 15px;
 
 }
 
+#display1
+{
+  margin-left: 27%;
+  display: inline;
+}
+#display2
+{
+  margin-left: 28%;
+  display: inline;
+}
 
 #like1 {
 height: 55px;
