@@ -13,6 +13,7 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/ngFx/dist/ngFx.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -48,6 +49,7 @@
         </div>
 
         <div id = "buttonarea">
+        <div><div class = "popper">1</div></div>
 
         <div >
         <div id ="like1" class = "mainbutton" ng-click="increment('first')"><br/><strong>Pop!</strong></div>
@@ -58,11 +60,20 @@
 
     <progress class="progress-striped active"><bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}"><span ng-hide="bar.value < 5">{{bar.value}}%</span></bar></progress>
 
+<div ng-show="toggler" class = "fx-fade-down">
+  {{achievement}}
+</div>
+<div ng-show="togglerSecond" class = "fx-fade-down">
+  Achievement! ---100 Total Pops---
+</div>
+<div ng-show="togglerThird" class = "fx-fade-down">
+  Achievement! ---#1 Vanilla Fan ---
+</div>
 
 
 
 
-
+<button id = "test">Next example GuessPop</button>
 
 
 

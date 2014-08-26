@@ -1,11 +1,18 @@
 
 
-angular.module('guessApp', ['ui.bootstrap'])
+angular.module('guessApp', ['ui.bootstrap', 'ngFx'])
 .controller('guessCtrl',function($scope, Counter){
   console.log('guessCtrl activated!');
   $scope.counter = Counter.count;
   $scope.displayFirst = 10;
   $scope.displaySecond = 4;
+  $scope.toggler = false;
+  $scope.togglerSecond = false;
+  $scope.togglerThird = false;
+  $scope.achievement = '';
+  $scope.popper = false;
+  $scope.personalCounter = 0;
+
 /*
 {
   firstImage
@@ -20,7 +27,6 @@ angular.module('guessApp', ['ui.bootstrap'])
 /*
 ToDo:
 
-put in achievement
 put in popnumber
 put in other pages
 
@@ -34,7 +40,7 @@ put in profile
 
   $scope.setBar = function()
   {
-     var percentageFirst = 0;
+      var percentageFirst = 0;
       var percentageSecond = 0;
 
       var totalPops = $scope.displayFirst + $scope.displaySecond;
@@ -50,6 +56,21 @@ put in profile
 
 
   $scope.increment = function(string){
+      if($scope.personalCounter === 0){
+    $scope.toggler = !$scope.toggler ;
+    $scope.achievement =   'Achievement! ---Vanilla Supporter---';
+  }
+  else if($scope.personalCounter === 34) {
+    $scope.togglerSecond = !$scope.togglerSecond;
+
+  } else if($scope.personalCounter === 39) {
+    $scope.togglerThird = !$scope.togglerThird;
+  }
+
+
+
+
+
     if(string === 'first'){
       $scope.displayFirst = Counter.increment($scope.displayFirst);
     }
@@ -66,8 +87,15 @@ put in profile
     console.log(percentageFirst);
     percentageSecond = Math.round(($scope.displaySecond/totalPops) *100);
 
-    console.log(percentageSecond);
 
+    setTimeout(function(){
+
+      console.log('triggered');
+    }, 500);
+
+
+    console.log(percentageSecond);
+    $scope.personalCounter++;
 $scope.stack(percentageFirst, percentageSecond);
 
   };
